@@ -1,32 +1,44 @@
-import React from "react";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import Card from "react-bootstrap/Card";
-
-class HornedBeasts extends React.Component {
+class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      vote: 0,
+      clicks: 0
     };
   }
-  handleClicking = () => {
-    this.setState({
-      vote: this.state.vote + 1,
+  clicking = () => {
+    this.setState(
+      {
+        clicks: this.state.clicks + 1
+      }
+    );
+  }
+
+  showCard = () => {
+    this.props.showCard({
+      title: this.props.title,
+      description: this.props.description,
+      source: this.props.source
     });
-  };
+  }
 
   render() {
     return (
-      <div>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img onClick={this.handleClicking} src={this.props.image_url} alt={this.props.title} />
+
+      <div class='cards' style={{ margin: '2rem' }}>
+        <Card style={{width: '28rem'}} class='card' onClick={this.showCard}>
+          <Card.Title>
+            <h3>{this.props.title}</h3>
+          </Card.Title>
+          <Card.Img onClick={this.clicking} variant="top" src={this.props.source} />
           <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
               {this.props.description}
             </Card.Text>
-            <p>Number of Votes : {this.state.vote}</p>
+            <Card.Text> The number of votes : {this.state.clicks}
+            </Card.Text>
           </Card.Body>
         </Card>
       </div>
@@ -34,4 +46,4 @@ class HornedBeasts extends React.Component {
   }
 }
 
-export default HornedBeasts;
+export default HornedBeast;
