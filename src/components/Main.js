@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HornedBeast from './HornedBeasts';
 import CardGroup from 'react-bootstrap/CardGroup';
@@ -15,7 +16,7 @@ class Main extends React.Component {
         />
       );
     });
-    return (<CardGroup id='group'>{hornedAnimals}</CardGroup>);
+    return (<CardGroup id='group'>{hornedAnimals}</CardGroup>)
 
   }
 }
