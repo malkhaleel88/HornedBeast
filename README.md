@@ -43,3 +43,18 @@ Actual time needed to complete: 45 Minutes
 ```
 
 ------------------------------------------------------------
+
+## **Time Estimation - Lab:Class 03**
+
+```
+Number and name of feature: Feature #1 / Display Modal 
+
+Estimate of time needed to complete: 40 Minutes
+
+Start time: 2:00
+
+Finish time: 2:30
+
+Actual time needed to complete: 30 Minutes
+```
+
